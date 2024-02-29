@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { WoodstockGraphQLClientProvider } from '@/lib/woodstock/client/WoodstockGraphQLClient'
+import { CacheUpdatedSubscriptionProvider } from '@/lib/woodstock/subscriptions/cacheUpdatedSubscription'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <WoodstockGraphQLClientProvider>
+          <CacheUpdatedSubscriptionProvider>
+            {children} 
+          </CacheUpdatedSubscriptionProvider>
+        </WoodstockGraphQLClientProvider>
+      </body>
     </html>
   )
 }

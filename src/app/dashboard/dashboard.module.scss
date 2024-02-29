@@ -1,0 +1,20 @@
+.dashboard-grid {
+  width: 100%;
+  height: 100%;
+
+  display: grid; 
+  grid-template-columns: 1fr 1fr 0.8fr 1.2fr;
+  grid-template-rows: 2fr 2fr 0.5fr;
+  gap: 16px; 
+  grid-template-areas: 
+    "statistics statistics savings accounts"
+    "bills bills savings accounts"
+    "transactions transactions transactions transactions";
+
+  padding: 16px;
+}
+
+.transactions {
+  grid-area: transactions;
+  
+}

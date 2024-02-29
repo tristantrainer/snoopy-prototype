@@ -1,0 +1,27 @@
+$base-color: #c6538c;
+$primary-color: rgb(5 67 161);
+$secondary-color: rgb(47 111 205);
+$background-color: #ebeff5;
+$background-primary: #f1f0f2;
+$background-secondary: #ebeff5;
+
+.container {
+    padding: 12px;
+    border-radius: 12px;
+    background-color: white;
+
+    .header-container {
+        display: flex;
+        flex-direction: row;
+
+        .header-items {
+            margin-left: auto;
+        }
+    }
+
+    .content-container {
+        padding: 12px;
+    }
+}
+
+
