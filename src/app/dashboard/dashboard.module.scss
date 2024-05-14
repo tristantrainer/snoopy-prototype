@@ -3,18 +3,52 @@
   height: 100%;
 
   display: grid; 
-  grid-template-columns: 1fr 1fr 0.8fr 1.2fr;
-  grid-template-rows: 2fr 2fr 0.5fr;
-  gap: 16px; 
-  grid-template-areas: 
-    "statistics statistics savings accounts"
-    "bills bills savings accounts"
-    "transactions transactions transactions transactions";
-
-  padding: 16px;
-}
-
-.transactions {
-  grid-area: transactions;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 0.8fr 1.2fr;
   
+  gap: 1.5rem; 
+  padding: 1.5rem; 
+
+  .statistics-card {
+    grid-column: span 2;
+  }
+  
+  .upcoming-bills-card {
+    grid-row: 2;
+    grid-column: span 2;
+  }
+  
+  .my-savings-card {
+    grid-row: span 2;
+  }
+  
+  .accounts-card {
+    grid-row: span 2;
+  }
+  
+  .transactions-card {
+    grid-column: span 4;
+
+    .transactions-table {
+      display: grid;
+
+      height: 100%;
+
+      grid-template-columns: 80% 1fr 1fr;
+      grid-template-rows: 3rem 1fr;
+
+      .items {
+        grid-column: span 3;
+      }
+    }
+  }
 }
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: solid red 2px;
+}
+
